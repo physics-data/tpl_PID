@@ -32,7 +32,7 @@ Particle identification in liquid scintillation detectors
 
 所有的输入数据存放在data文件夹下，因此请不要随意改动这个文件夹下的内容。
 
-data.csv文件中存储了用于第一步任务中需要用到的探测器参数和粒子的基本信息，具体内容如下：
+data.txt文件中存储了用于第一步任务中需要用到的探测器参数和粒子的基本信息，具体内容如下：
 
 | Table    | value     | units              |
 | -------- | --------- | ------------------ |
