@@ -36,15 +36,17 @@ Particle identification in liquid scintillation detectors
 
 第三步：模拟光子经过光电倍增管放大，得到输出的波形。该部分需要输出得到的波形图像。
 
-该阶段的作业需要提交3个编程文件（.py文件），经过助教测试后得到相应的分数。
+该阶段的作业需要提交3个编程文件，经过助教测试后得到相应的分数。
 
 给定的初始参量如下：
 
 液体闪烁体探测器直径：1m
 
-alpha粒子动能：8.9MeV
+alpha粒子动能：10MeV
 
 beta粒子动能：1MeV
+
+探测器液闪平均电离能：0.2MeV/mm
 
 
 
