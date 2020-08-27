@@ -6,12 +6,12 @@ num_light.csv: data/im_energy_depoisition.txt
 	python3  energy_depoisition.py $< $@
 
 # 计算光子传播的时间及进入到光电倍增管的各成分数量
-spread.csv: data/im_light_spread.txt
-	python3 light_spread.py $< $@
+spread.csv: data/im_light_spread.txt data/num_light.csv
+	python3 light_spread.py $^ $@
 
 # 计算光电倍增管的波形响应
-waveform.h5: data/im_responce.csv
-	python3 generate_response.py $< $@
+waveform.h5: data/im_responce.csv data/spread.csv
+	python3 generate_response.py $^ $@
 
 # 绘制探测器响应的波形图
 waveform.pdf: data/waveform.h5
