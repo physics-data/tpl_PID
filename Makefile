@@ -17,6 +17,15 @@ waveform.h5: data/constant.json data/spread.csv
 waveform.pdf: data/waveform.h5
 	python3 plot_waveform.py $^ $@
 
+chrenkov_dispersion/light_curve.h5 : data/constant.json data/PMT_1t.txt
+	python3 chrenkov.py $^ $@
+
+chrenkov_dispersion/waveform.h5: data/constant.json chrenkov_dispersion/light_curve.h5
+	python3 generate_response.py $^ $@ --advanced
+
+waveform.pdf: chrenkov_dispersion/waveform.h5
+	python3 plot_waveform.py $^ $@ --advanced
+
 # Delete partial files when the processes are killed.
 .DELETE_ON_ERROR:
 # Keep intermediate files around
